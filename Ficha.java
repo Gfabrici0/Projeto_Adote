@@ -74,4 +74,20 @@ public class Ficha {
         int ano = periodo.getYears();
         System.out.println(cachorro.getNome() + " está adotado(a) a " + dias + " dias, " + mes + " meses e " + ano + " ano.");
     }
+    
+    public void verificaTempo(){
+        LocalDate dataEntrada = LocalDate.parse(cachorro.getEntrada());
+        LocalDate dataAdocao = LocalDate.parse(Adocao);
+        if(dataAdocao.isAfter(dataEntrada)){
+            System.out.println("Verdadeiro");
+        }
+        else{
+            System.out.println("Falso");        
+        }
+    }
+
+    public void substituiPessoa(Pessoa pessoa, Pessoa pessoa2){        
+        this.setPessoa(pessoa);
+        System.out.println(pessoa.getNome() + " é a nova dona");
+    }
 }
